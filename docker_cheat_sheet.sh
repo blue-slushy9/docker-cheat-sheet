@@ -14,9 +14,6 @@ sudo docker run <image-name>
 # the following command below is preferred);
 sudo docker start <container-name>
 
-# Start a container as a daemon, i.e. background process;
-sudo docker start -d <container-name>
-
 # Connect to the container using a bash terminal;
 sudo docker exec -it <container-name> bash
 
