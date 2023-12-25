@@ -7,8 +7,13 @@ sudo docker pull <image-name>
 # View saved images;
 sudo docker images
 
-# Create a container;
+# Create a container---please note I have had many issues with trying 
+# to create containers this way, ergo the following command below is preferred;
 sudo docker run <image-name>
+
+# Creates the container to run in interactive mode and as a daemon,
+# then specifies a name for it, as well as which image to use;
+sudo docker run -it -d --name <new-container-name> <image-name>
 
 # Start a container (please note this has caused me issues in the past, 
 # the following command below is preferred);
