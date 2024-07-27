@@ -7,10 +7,11 @@ sudo docker pull <image-name>
 # View saved images
 sudo docker images
 
-# Build the image using a dockerfile, with tags
-docker build -t <image-name>:<tag> <dockerfile-name>
+# Build the image using a dockerfile, with tags; the build context
+# is usually the directory that stores the dockerfile, hence the .
+docker build -t <image-name>:<tag> <build-context>
 # Example
-docker build -t my-image:latest blah.dockerfile
+docker build -t my-image:latest .
 # Once you have built the image, you can then run it
 
 # Create a container---please note I have had many issues with trying 
