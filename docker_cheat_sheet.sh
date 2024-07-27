@@ -1,18 +1,24 @@
-# Search Dockerhub for an image;
+# Search Dockerhub for an image
 sudo docker search <image-name>
 
-# Download the image;
+# Download the image
 sudo docker pull <image-name>
 
-# View saved images;
+# View saved images
 sudo docker images
 
+# Build the image using a dockerfile, with tags
+docker build -t <image-name>:<tag> <dockerfile-name>
+# Example
+docker build -t my-image:latest blah.dockerfile
+# Once you have built the image, you can then run it
+
 # Create a container---please note I have had many issues with trying 
-# to create containers this way, ergo the following command below is preferred;
+# to create containers this way, ergo the following command below is preferred
 sudo docker run <image-name>
 
 # Creates the container to run in interactive mode and as a daemon,
-# then specifies a name for it, as well as which image to use;
+# then specifies a name for it, as well as which image to use
 sudo docker run -it -d --name <new-container-name> <image-name>
 
 # Start a container (please note this has caused me issues in the past, 
