@@ -1,3 +1,12 @@
+# DOCKER BUILDX
+# Verify if buildx is installed
+docker buildx version
+
+# Create a new builder instance (you probably only need one)
+docker buildx create --name <builder-name> --use
+
+# 
+
 # Search Dockerhub for an image
 sudo docker search <image-name>
 
@@ -6,13 +15,6 @@ sudo docker pull <image-name>
 
 # View saved images
 sudo docker images
-
-# Build the image using a dockerfile, with tags; the build context
-# is usually the directory that stores the dockerfile, hence the .
-docker build -t <image-name>:<tag> <build-context>
-# Example
-docker build -t my-image:latest .
-# Once you have built the image, you can then run it
 
 # Create a container---please note I have had many issues with trying 
 # to create containers this way, ergo the following command below is preferred
@@ -43,3 +45,11 @@ sudo docker rename <container-name> <new-container-name>
 
 # Remove/delete a container;
 sudo docker rm <container-name>
+
+# DOCKER BUILD IS DEPRECATED IN 2024
+# Build the image using a dockerfile, with tags; the build context
+# is usually the directory that stores the dockerfile, hence the .
+#docker build -t <image-name>:<tag> <build-context>
+# Example
+#docker build -t my-image:latest .
+# Once you have built the image, you can then run it
