@@ -5,7 +5,12 @@ docker buildx version
 # Create a new builder instance (you probably only need one)
 docker buildx create --name <builder-name> --use
 
-# 
+# View buildx instances you've created
+docker buildx ls
+
+# Navigate to the directory where your Dockerfile is stored;
+# Build the Docker image using buildx
+docker buildx build --tag <image-name>:<version> .
 
 # Search Dockerhub for an image
 sudo docker search <image-name>
