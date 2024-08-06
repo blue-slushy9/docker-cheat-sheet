@@ -9,8 +9,21 @@ docker buildx create --name <builder-name> --use
 docker buildx ls
 
 # Navigate to the directory where your Dockerfile is stored;
+# the -f switch is used in cases where the default dockerfile
+# name isn't "Dockerfile", or if it's in a different directory;
+# Build the Docker image using buildx, then load it into the
+# local Docker daemon (as opposed to pushing it to DockerHub,
+# for example); the build context is usually the directory that 
+# stores the dockerfile, hence the . ;
+docker buildx build -f <dockerfile-name or path> --load --tag <image-name>:<version> .
+# Example
+docker buildx build -f ./bash_git.dockerfile --load --tag bash_git:v1 .
+
+# NOTE: the below command is missing the --load or --push option,
+# it also assumes your dockerfile is named "Dockerfile";
+# Navigate to the directory where your Dockerfile is stored;
 # Build the Docker image using buildx
-docker buildx build --tag <image-name>:<version> .
+#docker buildx build --tag <image-name>:<version> .
 
 # Search Dockerhub for an image
 sudo docker search <image-name>
